@@ -11,6 +11,7 @@
 |
 */
 //Frontend Routes
+Auth::routes();
 Route::get('/','HomeController@index');
 Route::get('post','HomeController@post');
 
@@ -21,3 +22,7 @@ Route::get('user-panel', 'user\UserController@index');
 //Admin Panel Routes
 Route::get('admin-panel/login','admin\LoginController@index');
 Route::get('admin-panel','admin\AdminController@index');
+
+
+
+//Route::get('/home', 'HomeController@index')->name('home');

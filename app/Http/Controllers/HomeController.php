@@ -6,10 +6,19 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(){
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
         return view('index');
-    }
-    public function post(){
-        return view('v_post');
     }
 }
