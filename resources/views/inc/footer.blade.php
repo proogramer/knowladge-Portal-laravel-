@@ -6,6 +6,13 @@
     <!-- /.container -->
 </footer>
 
+<script>
+    $(document).ready (function(){
+        setTimeout(function() {
+            $("#success").hide();
+        }, 2000);
+    });
+</script>
 <!-- Bootstrap core JavaScript -->
 <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

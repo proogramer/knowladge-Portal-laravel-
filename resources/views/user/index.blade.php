@@ -3,6 +3,16 @@
 @section('content')
     <h1>Admin Panel</h1>
     <div id="page-wrapper">
+        @if (Session::has('success'))
+            <div id="success" class="alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+        @endif
+        @if (Session::has('error'))
+            <div id="error" class="alert alert-success">
+                {{ Session::get('error') }}
+            </div>
+        @endif
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
@@ -11,6 +21,7 @@
             </div>
             <!-- /. ROW  -->
             <div class="row">
+
                 <div class="col-md-4">
                     <div class="main-box mb-red">
                         <a href="#">
