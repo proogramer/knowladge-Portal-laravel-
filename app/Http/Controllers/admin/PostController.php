@@ -11,8 +11,9 @@ use Illuminate\Support\Facades\Session;
 
 class PostController extends Controller
 {
-    public function __construct(){
-        $this->middleware('guest:admin');
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
     }
     //This function is used for view the add post page
     public function add_post(){

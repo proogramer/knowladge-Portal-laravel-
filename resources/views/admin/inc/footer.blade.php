@@ -12,7 +12,7 @@
 <!-- CUSTOM SCRIPTS -->
 <script src="{{ asset('js/custom.js') }}"></script>
 <!-- CUSTOM SCRIPTS -->
-<script src="{{ asset('js/my_custom.js') }}"></script>
+<script src="{{ asset('js/admin_custom.js') }}"></script>
 <!-- FILEUPLOAD SCRIPTS -->
 <script src="{{ asset('js/bootstrap-fileupload.js') }}"></script>
 {{--Ckeditor--}}

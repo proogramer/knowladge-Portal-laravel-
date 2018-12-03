@@ -12,7 +12,7 @@
 */
 //Frontend Routes
 Route::get('/','HomeController@index')->name('home');
-Route::get('post','HomeController@post');
+Route::get('post/{title}','HomeController@view_post');
 Auth::routes();
 //User Panel Routes
 Route::prefix('user-panel')->group(function(){
@@ -21,7 +21,7 @@ Route::prefix('user-panel')->group(function(){
     Route::get('/add-post','user\PostController@add_post')->name('user-panel.add-post');
     Route::post('/add-post','user\PostController@add_post_store')->name('user-panel.add-post.submit');
     Route::get('/list-post','user\PostController@list_post')->name('user-panel.list-post');
-    Route::get('/edit-post','user\PostController@edit_post')->name('user-panel.edit-post');
+    Route::get('/edit-post/{title}','user\PostController@edit_post');
     Route::post('/edit-post','user\PostController@edit_post_store')->name('user-panel.edit-post.submit');
     Route::post('/delete-post','user\PostController@delete_post')->name('user-panel.delete-post');
     //User Panle Profile Routes

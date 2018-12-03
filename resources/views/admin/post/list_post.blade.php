@@ -49,9 +49,9 @@
                                                 <td>{{ $id }}</td>
                                                 <td>{{ $post->title }}</td>
                                                 <td>{{ $post->category_id  }}</td>
-                                                <td>{{ strip_tags(str_limit($post->description,50))  }}</td>
+                                                <td>{{ strip_tags('post/'.str_limit($post->description,50))  }}</td>
                                                 <td>
-                                                    <i title="View" style="cursor: pointer;" class="fa fa-eye"></i> |
+                                                    <a href="{{ url(str_replace(" ", "-", $post->title)) }}"> <i title="View" style="cursor: pointer;" class="fa fa-eye"></i></a> |
                                                     <a href="{{ url('admin-panel/edit-post/'.str_replace(" ", "-", $post->title)) }}"> <i title="Edit"style="cursor: pointer;"  class="fa fa-pencil-square-o" aria-hidden="true"></i></a> |
                                                     <i title="Delete" style="cursor: pointer;" onclick="return DeletePost({{$post->id}})"  class="fa fa-trash" aria-hidden="true"></i>
                                                 </td>

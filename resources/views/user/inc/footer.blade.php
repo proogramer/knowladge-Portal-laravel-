@@ -13,6 +13,8 @@
 <script src="{{ asset('js/jquery.metisMenu.js') }}"></script>
 <!-- CUSTOM SCRIPTS -->
 <script src="{{ asset('js/custom.js') }}"></script>
+<!-- USER CUSTOM SCRIPTS -->
+<script src="{{ asset('js/user_custom.js') }}"></script>
 {{--<script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>--}}
 {{--//Ckeditor script--}}
 <script type="text/javascript">
