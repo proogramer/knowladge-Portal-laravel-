@@ -36,7 +36,7 @@
 
 
             <li>
-                <a class="active-menu" href="index.html"><i class="fa fa-dashboard "></i>Dashboard</a>
+                <a class="active-menu" href="{{ route('user-panel.dashboard') }}"><i class="fa fa-dashboard "></i>Dashboard</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-desktop "></i>Posts<span class="fa arrow"></span></a>

@@ -4,6 +4,16 @@
     <h1>Admin Panel</h1>
     <div id="page-wrapper">
         <div id="page-inner">
+            @if (Session::has('success'))
+                <div id="success" class="alert alert-success">
+                    {{ Session::get('success') }}
+                </div>
+            @endif
+            @if (Session::has('error'))
+                <div id="error" class="alert alert-success">
+                    {{ Session::get('error') }}
+                </div>
+            @endif
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-head-line">DASHBOARD</h1>

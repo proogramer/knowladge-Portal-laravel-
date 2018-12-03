@@ -1,8 +1,17 @@
-@extends('user.layout.app')
+@extends('admin.layout.app')
 @section('content')
-    <!-- /. NAV SIDE  -->
     <div id="page-wrapper">
         <div id="page-inner">
+            @if (Session::has('success'))
+                <div id="success" class="alert alert-success">
+                    {{ Session::get('success') }}
+                </div>
+            @endif
+            @if (Session::has('error'))
+                <div id="error" class="alert alert-danger">
+                    {{ Session::get('error') }}
+                </div>
+            @endif
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-head-line">Post</h1>
@@ -18,11 +27,11 @@
                             Add Post
                         </div>
                         <div class="panel-body">
-                            <form role="form" method="post" action="{{ route('user-panel.add-post.submit') }}">
+                            <form role="form" method="post" action="{{ route('admin-panel.edit-post.submit') }}">
                                 {{ csrf_field() }}
                                 <div class="form-group">
                                     <label>Title</label>
-                                    <input class="form-control" value="{{ old('title') }}" type="text" id="title" name="title">
+                                    <input class="form-control" value="{{$post->title}}" type="text" id="title" name="title">
                                     @if ($errors->has('title'))
                                         <span class="help-block">
                                             <strong style="font-size: 10px; color: red; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; text-align: left; ">{{ $errors->first('title') }}</strong>
@@ -31,11 +40,17 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Select Example</label>
-                                    <select class="form-control">
-                                        <option value="" selected>Select Category</option>
-                                        <option>Two Vale</option>
-                                        <option>Three Vale</option>
-                                        <option>Four Vale</option>
+                                    <select name="category"  class="form-control">
+                                        <option value="">Select Category</option>
+                                        @if($categories)
+                                            @foreach($categories as $category)
+                                                @if($post->category_id==$category->id)
+                                                    <option selected value="{{ $category->id }}">{{ $category->category }}</option>
+                                                @else
+                                                    <option  value="{{ $category->id }}">{{ $category->category }}</option>
+                                                @endif
+                                            @endforeach
+                                        @endif
                                     </select>
                                     @if ($errors->has('category'))
                                         <span class="help-block">
@@ -45,7 +60,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Description</label>
-                                    <textarea id="description" name="description" class="form-control" rows="3"></textarea>
+                                    <textarea id="description"  name="description" class="form-control" rows="3">{{$post->description}}</textarea>
                                     @if ($errors->has('description'))
                                         <span class="help-block">
                                             <strong style="font-size: 10px; color: red; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; text-align: left; ">{{ $errors->first('description') }}</strong>
@@ -57,7 +72,7 @@
                                     <div class="">
                                         <div class="fileupload fileupload-new" data-provides="fileupload">
                                             <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                                <img src="{{ asset('img/demoUpload.jpg') }}" alt="" />
+                                                <img  src="{{ asset('img/demoUpload.jpg') }}" alt="" />
                                             </div>
                                             <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;">
 

@@ -1,12 +1,12 @@
-@extends('user.layout.app')
+@extends('admin.layout.app')
 @section('content')
     <!-- /. NAV SIDE  -->
     <div id="page-wrapper">
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="page-head-line">Basic Forms</h1>
-                    <h1 class="page-subhead-line">This is dummy text , you can replace it with your original text. </h1>
+                    <h1 class="page-head-line">Profile</h1>
+                    {{--<h1 class="page-subhead-line">This is dummy text , you can replace it with your original text. </h1>--}}
 
                 </div>
             </div>
@@ -15,13 +15,13 @@
                 <div class="col-md-12 col-sm-6 col-xs-12">
                     <div class="panel panel-info">
                         <div class="panel-heading">
-                            BASIC FORM
+                            Update Profile
                         </div>
                         <div class="panel-body">
                             <form role="form">
-                                <div class="form-group">
-                                    <label>Enter Name</label>
-                                    <input class="form-control" type="text">
+                                <div actio class="form-group">
+                                    <label>Name</label>
+                                    <input name="name" id="name" class="form-control" type="text">
                                     <p class="help-block">Help text here.</p>
                                 </div>
                                 <div class="form-group">

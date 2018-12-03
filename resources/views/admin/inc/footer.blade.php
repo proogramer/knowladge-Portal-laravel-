@@ -11,3 +11,11 @@
 <script src="{{ asset('js/jquery.metisMenu.js') }}"></script>
 <!-- CUSTOM SCRIPTS -->
 <script src="{{ asset('js/custom.js') }}"></script>
+<!-- CUSTOM SCRIPTS -->
+<script src="{{ asset('js/my_custom.js') }}"></script>
+<!-- FILEUPLOAD SCRIPTS -->
+<script src="{{ asset('js/bootstrap-fileupload.js') }}"></script>
+{{--Ckeditor--}}
+<script type="text/javascript">
+    CKEDITOR.replace('description' );
+</script>

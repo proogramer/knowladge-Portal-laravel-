@@ -1,4 +1,4 @@
-@extends('user.layout.app')
+@extends('admin.layout.app')
 @section('content')
     <!-- /. NAV SIDE  -->
     <div id="page-wrapper">
@@ -18,7 +18,7 @@
                             BASIC FORM
                         </div>
                         <div class="panel-body">
-                            <form role="form">
+                            <form method="post" action="{{ route('admin-panel.add-post.submit') }}" role="form">
                                 <div class="form-group">
                                     <label>Enter Name</label>
                                     <input class="form-control" type="text">
